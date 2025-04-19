@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Apr 19 16:57:27 2025
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : servant_1_3_0
+Top-level Entity Name : servive
+Family : Cyclone IV E
+Total logic elements : 1,086
+    Total combinational functions : 937
+    Dedicated logic registers : 562
+Total registers : 562
+Total pins : 8
+Total virtual pins : 0
+Total memory bits : 1,664
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

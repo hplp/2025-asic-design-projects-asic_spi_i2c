@@ -1,0 +1,12 @@
+
+State Machine - |servive|servant_spi_top:servant|servant_spi_master_if:spi_master_if|state
+Name state.FINISH state.READ_DATA state.TRANSMIT_DATA state.TRANSMIT_ADDRESS3 state.TRANSMIT_ADDRESS2 state.TRANSMIT_ADDRESS1 state.TRANSMIT_COMMAND state.IDLE state.TEMP_STATE 
+state.IDLE 0 0 0 0 0 0 0 0 0 
+state.TRANSMIT_COMMAND 0 0 0 0 0 0 1 1 0 
+state.TRANSMIT_ADDRESS1 0 0 0 0 0 1 0 1 0 
+state.TRANSMIT_ADDRESS2 0 0 0 0 1 0 0 1 0 
+state.TRANSMIT_ADDRESS3 0 0 0 1 0 0 0 1 0 
+state.TRANSMIT_DATA 0 0 1 0 0 0 0 1 0 
+state.READ_DATA 0 1 0 0 0 0 0 1 0 
+state.FINISH 1 0 0 0 0 0 0 1 0 
+state.TEMP_STATE 0 0 0 0 0 0 0 1 1 
