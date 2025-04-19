@@ -28,7 +28,7 @@ Languages: Verilog, TCL
 - A documented list of successful applications and challenges.
 - An assessment of LLM viability in ASIC design.
 - A structured report detailing findings, challenges, and recommendations.
-- Potential future directions for LLM applications in semiconductor workflows.
+- Potential future directions for LLM applications in semiconductor workflows
 
 ## Tasks:
 - Generate a functionally verified SPI-to-I2C convertor with the help of ChatGPT (common with FPGA project) - bue6zr, bp2sq
