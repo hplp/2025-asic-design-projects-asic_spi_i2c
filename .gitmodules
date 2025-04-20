@@ -1,3 +1,6 @@
 [submodule "tt10-factory-test"]
 	path = tt10-factory-test
 	url = https://github.com/TinyTapeout/tt10-factory-test.git
+[submodule "tt10-Johnson_Counter"]
+	path = tt10-Johnson_Counter
+	url = https://github.com/bp2sq-uva/tt10-Johnson_Counter.git
