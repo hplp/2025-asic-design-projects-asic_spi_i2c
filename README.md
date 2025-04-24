@@ -42,6 +42,7 @@ Progress has been made on a few fronts.
 - Completed a functional Verilog code for the Wishbone-to-SPI converter in Verilog.
 - Integrate it into the SERV CPU.
 - Added the design files to a TinyTapeout GitHub repository to evaluate the GDS flow.
+
 At the moment, it says our design is too big to fit into the die size available.
 
 <p align="center">
