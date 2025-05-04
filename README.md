@@ -60,7 +60,8 @@ The image below shows the overview resource utilization in TT.
 <p align="center">
   <img src="images/TT_resource_utilization.png" alt="utilization_error" width="80%">
 
-#### Verification
+#### Verification 
+###### Dining Phylosopher Problem
 The design was also verified using the open soure verification tool, Verilator. 
 
 <p align="center">
