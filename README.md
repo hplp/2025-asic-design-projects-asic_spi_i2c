@@ -88,6 +88,14 @@ For this project, we use **Servant** which is a reference platform which package
 </figure>
 
 
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <img src="images/spi_read_2.png" alt="spi_read" style="width: 80%;">
+  <figcaption style="text-align: center; margin-top: 8px;">Figure 1: SPI Read Operation</figcaption>
+</div>
+
+
+
 ## Results
 #### TinyTapeout Implementation
 
