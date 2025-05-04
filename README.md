@@ -50,7 +50,7 @@ The SPI-SERV design was hardened using the TinyTapeout(TT) repository. The final
   <img src="images/TT_3D_rendered.png" alt="utilization_error" width="80%">
 
 
-TT uses cocotb for testing purposes. The cocotb testing scriots were updated to tet the scripts upon uploading to our TT repository. The image below shows an example of how the cocotb tests the design files for reading data memory('Hi, I'm Servant!') and writing (prints 'Yes' if writes successfully)
+TT uses cocotb for testing purposes. The cocotb testing scripts were updated to sanity test the design upon updating them. The image below shows an example of how the cocotb tests the design files for store word and load world (printing 'Yes' tests for load word specifically)
 
 <p align="center">
   <img src="images/cocotb_tests.png" alt="utilization_error" width="80%">
@@ -60,11 +60,11 @@ The image below shows the overview resource utilization in TT.
 <p align="center">
   <img src="images/TT_resource_utilization.png" alt="utilization_error" width="80%">
 
+#### Verification
 The design was also verified using the open soure verification tool, Verilator. 
 
-
 <p align="center">
-  <a href="https://myuva-my.sharepoint.com/:v:/r/personal/bp2sq_virginia_edu/Documents/ECE6502-Final_Project/Verilator_Dining_Phylosopher_Problem.mov?csf=1&web=1&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=jVm6eZ">
+  <a href="https://drive.google.com/file/d/1RlvJeYeywYfrMxeHt2FA7NISYa-Ry-am/view?usp=share_link">
     <img src="images/Verilator_test.png" alt="Video Preview" width="80%">
   </a>
 </p>
