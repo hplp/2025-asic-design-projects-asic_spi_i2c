@@ -62,22 +62,13 @@ The image below shows the overview resource utilization in TT.
 
 The design was also verified using the open soure verification tool, Verilator. 
 
+
+
 <p align="center">
-  <a href="images/Verilator_Dining_Phylosopher_Problem.mov">
+  <a href="https://myuva-my.sharepoint.com/:v:/r/personal/bp2sq_virginia_edu/Documents/ECE6502-Final_Project/Verilator_Dining_Phylosopher_Problem.mov?csf=1&web=1&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=jVm6eZ">
     <img src="images/Verilator_test.png" alt="Video Preview" width="80%">
   </a>
 </p>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
