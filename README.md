@@ -60,17 +60,19 @@ For this project, we use **Servant** which is a reference platform which package
 
 ### Wishbone vs SPI (Serial Peripheral Interface)
 
-Wishbone:
+###### Wishbone:
 - A parallel synchronous protocol
 - Relatively high speed - **Can access 1 word using 1 clock cycle**
 - Requires high wire count **(100+ in total)**
 
 <p align="center">
   <img src="images/wb_con_2.png" alt="wb_con" width="80%">
+  <figcaption style="text-align: center;">Figure 1: SPI Read Operation</figcaption>
 </p>
 > *Figure: Wishbone connection*
 
-SPI
+
+###### SPI
 - A synchronized serial communication protocol
 - Can integrate with **4 wires total**
 - A Master-Slave Architecture
@@ -78,13 +80,15 @@ SPI
 
 <p align="center">
   <img src="images/spi_con.png" alt="spi_con" width="80%">
+  <figcaption style="text-align: center;">Figure 1: SPI Read Operation</figcaption>
 </p>
 > *Figure: SPI connection*
 
 <p align="center">
   <img src="images/spi_read_2.png" alt="spi_read" width="80%">
+  <figcaption style="text-align: center;">Figure 1: SPI Read Operation</figcaption>
 </p>
-> *Figure: SPI Read (1 word)*
+*Figure: SPI Read (1 word)*
 
 
 ## Results
