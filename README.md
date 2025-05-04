@@ -39,8 +39,10 @@ Languages: Verilog, TCL
 - Documentation
 
 <p align="center">
-  <img src="images/SERV_TT_error.png" alt="utilization_error" width="80%">
+  <img src="images/SERV_TT_Error.png" alt="utilization_error" width="80%">
 
 ## File Structure
 - [fram_connect](https://github.com/hplp/2025-asic-design-projects-asic_spi_i2c/tree/main/fram_connect): Wishbone-to-SPI convertor integrated to the SERV CPU.
 - tt10-spi_serv: TinyTapeout GitHub repository added as a submodule.
+
+## Results
