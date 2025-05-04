@@ -87,5 +87,5 @@ The Verilog design was also verified using the open soure verification tool, Ver
   </a>
 </p>
 
-
+#### Final Overview and Outlook
 The project successfully decoupls the in-built memory in SERV and successfully replaces that with an expternal SPI-FRAM. With SPI interface, the external memory can be accessed using a total of 4 wires. This also reduces the total logic footprint requirement in the SERV. This proves that it is possible to implement a external memory accessing using serial SPI protocol for SERV. Therefore with further work, it is possible to achieve a fully bit-serial architecture for SERV with SPI memory accessing. 
