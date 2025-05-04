@@ -43,7 +43,7 @@ Languages: Verilog, TCL
 - tt10-spi_serv: TinyTapeout GitHub repository added as a submodule.
 
 ## Results
-
+#### TinyTapeout Implementation
 The SPI-SERV design was hardened using the TinyTapeout(TT) repository. The final TT implementation made use of a totl of 3X2 tiles with a 80% placement density. The final utilization was 64.5% with a total wire length of 243537um. The picture illustrats the 3D rendered image of the final design on TT. 
 
 <p align="center">
