@@ -63,8 +63,8 @@ The image below shows the overview resource utilization in TT.
 The design was also verified using the open soure verification tool, Verilator. 
 
 <p align="center">
-  <a href="images/Verilator_test.mov">
-    <img src="images/preview_thumbnail.png" alt="Video Preview" width="80%">
+  <a href="images/Verilator_Dining_Phylosopher_Problem.mov">
+    <img src="images/Verilator_test.png" alt="Video Preview" width="80%">
   </a>
 </p>
 
