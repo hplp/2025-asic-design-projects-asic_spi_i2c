@@ -67,7 +67,7 @@ For this project, we use **Servant** which is a reference platform which package
 
 <p align="center">
   <img src="images/wb_con_2.png" alt="wb_con" width="80%">
-  <figcaption style="text-align: center;">Figure:Wishbone Connection</figcaption>
+  <figcaption>Figure:Wishbone Connection</figcaption>
 </p>
 
 
@@ -79,13 +79,13 @@ For this project, we use **Servant** which is a reference platform which package
 
 <p align="center">
   <img src="images/spi_con.png" alt="spi_con" width="80%">
-  <figcaption style="text-align: center;">Figure: SPI connection</figcaption>
+  <figcaption>Figure: SPI connection</figcaption>
 </p>
 
 
 <p align="center">
   <img src="images/spi_read_2.png" alt="spi_read" width="80%">
-  <figcaption style="text-align: center;">Figure: SPI Read (1 word)</figcaption>
+  <figcaption>Figure: SPI Read (1 word)</figcaption>
 </p>
 
 
@@ -115,7 +115,7 @@ The image below shows the overview resource utilization in TT.
 
 <p align="center">
   <img src="images/TT_resource_utilization.png" alt="utilization_error" width="80%">
-  <figcaption style="text-align: center;">Figure: TinyTapeout Resource Utilization</figcaption>
+  <figcaption>Figure: TinyTapeout Resource Utilization</figcaption>
 </p>
 
 #### Verification 
