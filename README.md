@@ -70,7 +70,7 @@ The Dining Philosophers Problem is a classic example in computer science that il
 * To eat, a philosopher needs both the left and right forks.
 * A philosopher must pick up the left fork and the right fork, eat, and then put them down.
 
-The design was also verified using the open soure verification tool, Verilator. 
+The Verilog design was also verified using the open soure verification tool, Verilator. The video demo below shows how the the design was simulated for the Dining Philosophers Problem in Verilator.
 
 <p align="center">
   <a href="https://drive.google.com/file/d/1RlvJeYeywYfrMxeHt2FA7NISYa-Ry-am/view?usp=share_link">
