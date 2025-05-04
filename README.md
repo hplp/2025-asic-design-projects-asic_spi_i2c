@@ -61,7 +61,15 @@ The image below shows the overview resource utilization in TT.
   <img src="images/TT_resource_utilization.png" alt="utilization_error" width="80%">
 
 #### Verification 
-###### Dining Phylosopher Problem
+###### The Dining Philosophers Problem
+The Dining Philosophers Problem is a classic example in computer science that illustrates issues related to synchronization, concurrency, and resource sharing. 
+
+* There are five philosophers sitting around a circular table.
+* Each philosopher alternates between thinking and eating.
+* In front of each philosopher is a plate of spaghetti, and between each pair of philosophers is one fork (so 5 philosophers, 5 forks total).
+* To eat, a philosopher needs both the left and right forks.
+* A philosopher must pick up the left fork and the right fork, eat, and then put them down.
+
 The design was also verified using the open soure verification tool, Verilator. 
 
 <p align="center">
