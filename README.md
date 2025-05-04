@@ -67,9 +67,8 @@ For this project, we use **Servant** which is a reference platform which package
 
 <p align="center">
   <img src="images/wb_con_2.png" alt="wb_con" width="80%">
-  <figcaption style="text-align: center;">Figure 1: SPI Read Operation</figcaption>
+  <figcaption style="text-align: center;">Figure:Wishbone Connection</figcaption>
 </p>
-> *Figure: Wishbone connection*
 
 
 ###### SPI
@@ -80,15 +79,14 @@ For this project, we use **Servant** which is a reference platform which package
 
 <p align="center">
   <img src="images/spi_con.png" alt="spi_con" width="80%">
-  <figcaption style="text-align: center;">Figure 1: SPI Read Operation</figcaption>
+  <figcaption style="text-align: center;">Figure: SPI connection</figcaption>
 </p>
-> *Figure: SPI connection*
+
 
 <p align="center">
   <img src="images/spi_read_2.png" alt="spi_read" width="80%">
-  <figcaption style="text-align: center;">Figure 1: SPI Read Operation</figcaption>
+  <figcaption style="text-align: center;">Figure: SPI Read (1 word)</figcaption>
 </p>
-*Figure: SPI Read (1 word)*
 
 
 ## Results
@@ -102,18 +100,23 @@ The SPI-SERV design was hardened using the TinyTapeout(TT) repository. The final
 
 <p align="center">
   <img src="images/TT_3D_rendered.png" alt="utilization_error" width="80%">
+</p>
 
 #### Cocotb Testing
 TT uses cocotb for testing purposes. The cocotb testing scripts were updated to sanity test the design upon updating them. The image below shows an example of how the cocotb tests the design files for store word and load world (printing 'Yes' tests for load word specifically)
 
 <p align="center">
   <img src="images/cocotb_tests.png" alt="utilization_error" width="80%">
+  <figcaption style="text-align: center;">Figure: cocotb tests</figcaption>
+</p>
 
 #### TinyTapeout Resource Utilization
 The image below shows the overview resource utilization in TT.
 
 <p align="center">
   <img src="images/TT_resource_utilization.png" alt="utilization_error" width="80%">
+  <figcaption style="text-align: center;">Figure: TinyTapeout Resource Utilization</figcaption>
+</p>
 
 #### Verification 
 ###### The Dining Philosophers Problem
@@ -121,6 +124,7 @@ The Dining Philosophers Problem is a classic example in computer science that il
 
 <p align="center">
   <img src="images/at_the_table.png" alt="utilization_error" width="40%">
+</p>
 
 * There are five philosophers sitting around a circular table.
 * Each philosopher alternates between thinking and eating.
