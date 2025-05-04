@@ -47,9 +47,9 @@ Languages: Verilog, TCL
 
 ### What is SERV?
 
-<p align="center">
+<figure style="text-align: center;">
   <img src="images/serv.png" alt="serv" width="80%">
-</p>
+</figure>
 
 Serial RISC-V (SERV) is bit-serial CPU that claims to be the world's smallest RISC-V CPU. It is,
 - Open source (under BSD license)
@@ -65,10 +65,10 @@ For this project, we use **Servant** which is a reference platform which package
 - Relatively high speed - **Can access 1 word using 1 clock cycle**
 - Requires high wire count **(100+ in total)**
 
-<p align="center">
+<figure style="text-align: center;">
   <img src="images/wb_con_2.png" alt="wb_con" width="80%">
   <figcaption>Figure:Wishbone Connection</figcaption>
-</p>
+</figure>
 
 
 ###### SPI
@@ -77,16 +77,15 @@ For this project, we use **Servant** which is a reference platform which package
 - A Master-Slave Architecture
 - Relatively slow - **require 64 clock cycles to access 1 word** 
 
-<p align="center">
+<figure style="text-align: center;">
   <img src="images/spi_con.png" alt="spi_con" width="80%">
   <figcaption>Figure: SPI connection</figcaption>
-</p>
+</figure>
 
-
-<p align="center">
+<figure style="text-align: center;">
   <img src="images/spi_read_2.png" alt="spi_read" width="80%">
   <figcaption>Figure: SPI Read (1 word)</figcaption>
-</p>
+</figure>
 
 
 ## Results
