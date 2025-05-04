@@ -49,12 +49,13 @@ The SPI-SERV design was hardened using the TinyTapeout(TT) repository. The final
 <p align="center">
   <img src="images/TT_3D_rendered.png" alt="utilization_error" width="80%">
 
-
+#### Cocotb testing
 TT uses cocotb for testing purposes. The cocotb testing scripts were updated to sanity test the design upon updating them. The image below shows an example of how the cocotb tests the design files for store word and load world (printing 'Yes' tests for load word specifically)
 
 <p align="center">
   <img src="images/cocotb_tests.png" alt="utilization_error" width="80%">
 
+#### TinyTapeout resource utilization
 The image below shows the overview resource utilization in TT.
 
 <p align="center">
