@@ -82,11 +82,6 @@ For this project, we use **Servant** which is a reference platform which package
   <figcaption>Figure: SPI connection</figcaption>
 </figure>
 
-<figure style="text-align: center;">
-  <img src="images/spi_read_2.png" alt="spi_read" width="80%">
-  <figcaption>Figure: SPI Read (1 word)</figcaption>
-</figure>
-
 
 <figure style="margin: 0 auto; text-align: center; width: 80%;">
   <img src="images/spi_read_2.png" alt="spi_read" style="width: 100%;">
