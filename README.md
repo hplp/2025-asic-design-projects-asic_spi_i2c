@@ -77,15 +77,16 @@ For this project, we use **Servant** which is a reference platform which package
 - A Master-Slave Architecture
 - Relatively slow - **require 64 clock cycles to access 1 word** 
 
-<figure style="text-align: center;">
-  <img src="images/spi_con.png" alt="spi_con" width="80%">
-  <figcaption>Figure: SPI connection</figcaption>
+<figure style="margin: 0 auto; text-align: center; width: 80%;">
+  <img src="images/spi_read_2.png" alt="spi_read" style="width: 100%;">
+  <figcaption>Figure: SPI Connection</figcaption>
 </figure>
+
 
 
 <figure style="margin: 0 auto; text-align: center; width: 80%;">
   <img src="images/spi_read_2.png" alt="spi_read" style="width: 100%;">
-  <figcaption>Figure 1: SPI Read Operation</figcaption>
+  <figcaption>Figure: SPI Read Operation</figcaption>
 </figure>
 
 
