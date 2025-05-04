@@ -46,7 +46,7 @@ Languages: Verilog, TCL
 #### TinyTapeout Implementation
 
 <p align="center">
-  <img src="images/ttlogo_400.png" alt="utilization_error" width="80%">
+  <img src="images/ttlogo_400.png" alt="utilization_error" width="30%">
 
 
 The SPI-SERV design was hardened using the TinyTapeout(TT) repository. The final TT implementation made use of a totl of 3X2 tiles with a 80% placement density. The final utilization was 64.5% with a total wire length of 243537um. The picture illustrats the 3D rendered image of the final design on TT. 
@@ -71,7 +71,7 @@ The image below shows the overview resource utilization in TT.
 The Dining Philosophers Problem is a classic example in computer science that illustrates issues related to synchronization, concurrency, and resource sharing. 
 
 <p align="center">
-  <img src="images/at_the_table.png" alt="utilization_error" width="80%">
+  <img src="images/at_the_table.png" alt="utilization_error" width="40%">
 
 * There are five philosophers sitting around a circular table.
 * Each philosopher alternates between thinking and eating.
