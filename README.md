@@ -42,6 +42,51 @@ Languages: Verilog, TCL
 - [fram_connect](https://github.com/hplp/2025-asic-design-projects-asic_spi_i2c/tree/main/fram_connect): Wishbone-to-SPI convertor integrated to the SERV CPU.
 - tt10-spi_serv: TinyTapeout GitHub repository added as a submodule.
 
+
+
+
+### What is SERV?
+
+<p align="center">
+  <img src="images/serv.png" alt="serv" width="80%">
+</p>
+
+Serial RISC-V (SERV) is bit-serial CPU that claims to be the world's smallest RISC-V CPU. It is,
+- Open source (under BSD license)
+- Uses Wishbone interface for Data and Instruction Buses
+- Compatible with Zephyr OS (light-weight, open-source OS by Linux Foundation)
+
+For this project, we use **Servant** which is a reference platform which packages memory, GPIO and timers with SERV to make it a standalone computer. This also uses Wishbone for the memory interfaces.
+
+### Wishbone vs SPI (Serial Peripheral Interface)
+
+Wishbone:
+- A parallel synchronous protocol
+- Relatively high speed - **Can access 1 word using 1 clock cycle**
+- Requires high wire count **(100+ in total)**
+
+<p align="center">
+  <img src="images/wb_con_2.png" alt="wb_con" width="80%">
+</p>
+> *Figure: Wishbone connection*
+
+SPI
+- A synchronized serial communication protocol
+- Can integrate with **4 wires total**
+- A Master-Slave Architecture
+- Relatively slow - **require 64 clock cycles to access 1 word** 
+
+<p align="center">
+  <img src="images/spi_con.png" alt="spi_con" width="80%">
+</p>
+> *Figure: SPI connection*
+
+<p align="center">
+  <img src="images/spi_read_2.png" alt="spi_read" width="80%">
+</p>
+> *Figure: SPI Read (1 word)*
+
+
 ## Results
 #### TinyTapeout Implementation
 
