@@ -63,7 +63,6 @@ The image below shows the overview resource utilization in TT.
 The design was also verified using the open soure verification tool, Verilator. 
 
 
-
 <p align="center">
   <a href="https://myuva-my.sharepoint.com/:v:/r/personal/bp2sq_virginia_edu/Documents/ECE6502-Final_Project/Verilator_Dining_Phylosopher_Problem.mov?csf=1&web=1&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=jVm6eZ">
     <img src="images/Verilator_test.png" alt="Video Preview" width="80%">
@@ -71,16 +70,4 @@ The design was also verified using the open soure verification tool, Verilator.
 </p>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<p align="center">
-  <img src="images/SERV_TT_Error.png" alt="utilization_error" width="80%">
+The project successfully decoupls the in-built memory in SERV and successfully replaces that with an expternal SPI-FRAM. With SPI interface, the external memory can be accessed using a total of 4 wires. This also reduces the total logic footprint requirement in the SERV. 
