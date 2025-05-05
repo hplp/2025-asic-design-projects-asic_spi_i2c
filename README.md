@@ -3,33 +3,33 @@
 ## Team Name: 
 ASIC_SPI_SERV
 
-## Team Members:
+### Team Members:
 - Kavish Ranawella (bue6zr)
 - Bhasitha Dharmasena (bp2sq)
 
-## Project Title:
+### Project Title:
 TinyTapeout Design for Serial RISC-V (SERV) with SPI memory access
 
-## Project Description:
+### Project Description:
 Serial RISC-V (SERV) is a bit-serial CPU which claims to be the world's smallest RISC-V CPU. In the current implementation, even though most of the core components are serialized, Register File and Memory accessing is still done parallely via a Wishbone interface. With our FPGA project, we aim to achieve pure serialization by implementing memory access through a Serial Peripheral Interface (SPI). With the ASIC project, we aim to implement this design in TinyTapeout.
 
-## Key Objectives:
+### Key Objectives:
 - Learn intricate details of the OpenLane2 ASIC design flow used in TinyTapout.
 - Evaluate the readiness of the SERV with SPI for a tapeout using TinyTapeout.
 
 
-## Technology Stack:
+### Technology Stack:
 Tools: Tiny Tapeout, OpenLane2, Verilator, Cocotb
 
 Languages: Verilog, TCL
 
 
-## Expected Outcomes:
+### Expected Outcomes:
 - Github repository for TinyTapeout10.
 - Documentation of our findings during our project.
 
 
-## Tasks:
+### Tasks:
 - Develop Verilog code for a Wishbone-to-SPI converter.
 - Integrate the Wishbone-to-SPI converter with the SERV CPU.
 - Add the design files to a TinyTapeout GitHub Repository.
@@ -38,7 +38,7 @@ Languages: Verilog, TCL
 - Resource usage evaluation of the new approach
 - Documentation
 
-## File Structure
+### File Structure
 - [fram_connect](https://github.com/hplp/2025-asic-design-projects-asic_spi_i2c/tree/main/fram_connect): Wishbone-to-SPI convertor integrated to the SERV CPU.
 - tt10-spi_serv: TinyTapeout GitHub repository added as a submodule.
 
@@ -60,7 +60,7 @@ For this project, we use **Servant** which is a reference platform which package
 
 ### Wishbone vs SPI (Serial Peripheral Interface)
 
-###### Wishbone:
+##### Wishbone:
 - A parallel synchronous protocol
 - Relatively high speed - **Can access 1 word using 1 clock cycle**
 - Requires high wire count **(100+ in total)**
@@ -71,7 +71,7 @@ For this project, we use **Servant** which is a reference platform which package
 </figure>
 
 
-###### SPI
+##### SPI
 - A synchronized serial communication protocol
 - Can integrate with **4 wires total**
 - A Master-Slave Architecture
@@ -121,7 +121,7 @@ The image below shows the overview resource utilization in TT.
 </p>
 
 #### Verification 
-###### The Dining Philosophers Problem
+##### The Dining Philosophers Problem
 The Dining Philosophers Problem is a classic example in computer science that illustrates issues related to synchronization, concurrency, and resource sharing. 
 
 <p align="center">
