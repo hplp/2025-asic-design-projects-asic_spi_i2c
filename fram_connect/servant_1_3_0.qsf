@@ -1,0 +1,103 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2024  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+# Date created = 04:40:28  December 12, 2024
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		servant_1_3_0_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Intel recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE22F17C6
+set_global_assignment -name TOP_LEVEL_ENTITY servive
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "04:40:28  DECEMBER 12, 2024"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_parameter -name memfile ./src/servant_1.3.0/sw/blinky.hex
+set_parameter -name memsize 262144
+set_location_assignment PIN_R8 -to i_clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to i_clk
+set_location_assignment PIN_A15 -to q
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to q
+set_location_assignment PIN_D11 -to uart_txd
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to uart_txd
+set_location_assignment PIN_J15 -to i_rst_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to i_rst_n
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_FILE ../serial_out/synthesis/submodules/uart_rx.v
+set_global_assignment -name VERILOG_FILE ../serial_out/synthesis/submodules/serial_out_jtag_uart_0.v
+set_global_assignment -name VERILOG_FILE ../serial_out/synthesis/serial_out.v
+set_global_assignment -name VERILOG_FILE src/servant_1.3.0/servant_spi/servant_spi_top.v
+set_global_assignment -name VERILOG_FILE src/servant_1.3.0/servant_spi/servant_spi_slave_if.v
+set_global_assignment -name VERILOG_FILE src/servant_1.3.0/servant_spi/servant_spi_ram.v
+set_global_assignment -name VERILOG_FILE src/servant_1.3.0/servant_spi/servant_spi_master_if.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_bufreg.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_bufreg2.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_alu.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_csr.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_ctrl.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_decode.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_immdec.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_mem_if.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_rf_if.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_rf_ram_if.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_rf_ram.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_state.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_debug.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_top.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_rf_top.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_aligner.v
+set_global_assignment -name VERILOG_FILE src/serv_1.3.0/rtl/serv_compdec.v
+set_global_assignment -name VERILOG_FILE src/servile_1.3.0/servile/servile_rf_mem_if.v
+set_global_assignment -name VERILOG_FILE src/servile_1.3.0/servile/servile_mux.v
+set_global_assignment -name VERILOG_FILE src/servile_1.3.0/servile/servile_arbiter.v
+set_global_assignment -name VERILOG_FILE src/servile_1.3.0/servile/servile.v
+set_global_assignment -name VERILOG_FILE src/servant_1.3.0/servant/servant_timer.v
+set_global_assignment -name VERILOG_FILE src/servant_1.3.0/servant/servant_gpio.v
+set_global_assignment -name VERILOG_FILE src/servant_1.3.0/servant/servant_mux.v
+set_global_assignment -name SYSTEMVERILOG_FILE src/servant_1.3.0/servant/servant_ram_quartus.sv
+set_global_assignment -name VERILOG_FILE src/servant_1.3.0/servant/servant.v
+set_global_assignment -name SDC_FILE src/servant_1.3.0/data/de0_nano.sdc
+set_global_assignment -name VERILOG_FILE src/servant_1.3.0/servant/servive_clock_gen.v
+set_global_assignment -name VERILOG_FILE src/servant_1.3.0/servant/servive.v
+set_location_assignment PIN_A3 -to spi_ss
+set_location_assignment PIN_C3 -to spi_mosi
+set_location_assignment PIN_D3 -to spi_miso
+set_location_assignment PIN_B4 -to spi_sck
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,0 +1,3 @@
+[submodule "tt10-spi_serv"]
+	path = tt10-spi_serv
+	url = https://github.com/bp2sq-uva/tt10-spi_serv.git

@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat Apr 19 16:57:39 2025
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : servant_1_3_0
+Top-level Entity Name : servive
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 1,034 / 22,320 ( 5 % )
+    Total combinational functions : 939 / 22,320 ( 4 % )
+    Dedicated logic registers : 554 / 22,320 ( 2 % )
+Total registers : 554
+Total pins : 8 / 154 ( 5 % )
+Total virtual pins : 0
+Total memory bits : 1,664 / 608,256 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )
