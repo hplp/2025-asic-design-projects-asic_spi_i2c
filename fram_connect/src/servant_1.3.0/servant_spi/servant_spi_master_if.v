@@ -45,15 +45,11 @@ reg         [2:0]                               bit_cnt;
 
 reg         [3:0]                               state; // TODO: need to change back to [2:0] after removing temp
 reg         [1:0]                               cmd_reg;
-reg         [ADDRESS_WIDTH-1:0]                 address_reg;
-reg         [31:0]                              wr_data_reg;
 reg         [31:0]                              rd_data_reg;
 reg         [1:0]                               byte_offset;
-reg         [1:0]                               last_byte;
 reg         [7:0]                               spi_out_reg;
 reg         [7:0]                               spi_in_reg;
 
-wire       serial_clk_posedge;
 wire       serial_clk_negedge;
 wire [1:0] sel_dec_start;
 wire [1:0] sel_dec_last;
@@ -61,9 +57,7 @@ wire [1:0] sel_dec_last;
 assign spi_sck = serial_clk;
 assign spi_mosi = spi_out_reg[7];
 assign rd_data = rd_data_reg;
-assign serial_clk_posedge = serial_clk & ~serial_clk_delay; // TODO: Check and remove if not needed
 assign serial_clk_negedge = ~serial_clk & serial_clk_delay;
-//assign rd_data = {rd_data_reg[3], rd_data_reg[2], rd_data_reg[1], rd_data_reg[0]}; //TODO: Check and remove this
 assign sel_dec_start = wb_sel[0] ? 2'd0 : wb_sel[1] ? 2'd1 : wb_sel[2] ? 2'd2 : wb_sel[3] ? 2'd3 : 2'd0;
 assign sel_dec_last  = wb_sel[3] ? 2'd0 : wb_sel[2] ? 2'd3 : wb_sel[1] ? 2'd2 : wb_sel[0] ? 2'd1 : 2'd1;
 
@@ -72,7 +66,7 @@ always @(posedge clock or posedge reset) begin
 	if (reset) begin
 		serial_clk <= 1'b1;
 	end else if (!spi_ss) begin
-		if ((state == TRANSMIT_DATA || state == READ_DATA) && byte_offset == last_byte && clk_cnt == 0 && bit_cnt == 0) begin // TODO: Try to improve this
+		if ((state == TRANSMIT_DATA || state == READ_DATA) && byte_offset == sel_dec_last && clk_cnt == 0 && bit_cnt == 0) begin // TODO: Try to improve this
 			serial_clk <= 1'b1;
 		end else if (clk_cnt % (CLOCK_DIVIDER/2) == 0) begin
 			serial_clk <= ~serial_clk;
@@ -156,7 +150,7 @@ always @(posedge clock or posedge reset) begin
 				end
 			end
 			TRANSMIT_DATA: begin
-				if (byte_offset == last_byte) begin
+				if (byte_offset == sel_dec_last) begin
 					state <= FINISH;
 				end
 				else begin
@@ -164,7 +158,7 @@ always @(posedge clock or posedge reset) begin
 				end
 			end
 			READ_DATA: begin
-			  if (byte_offset == last_byte) begin
+			  if (byte_offset == sel_dec_last) begin
 					state <= FINISH;
 			  end
 			  else begin
@@ -206,18 +200,18 @@ always @(negedge clock) begin
 				end
 				TRANSMIT_ADDRESS1:
 				begin
-					spi_out_reg <= address_reg[ADDRESS_WIDTH-1:16];
+					spi_out_reg <= address[ADDRESS_WIDTH-1:16];
 				end
 				TRANSMIT_ADDRESS2:
 				begin
-					spi_out_reg <= address_reg[15:8];
+					spi_out_reg <= address[15:8];
 				end
 				TRANSMIT_ADDRESS3:
 				begin
-					spi_out_reg <= address_reg[7:0];
+					spi_out_reg <= {address[7:2],sel_dec_start};
 				end
 				TRANSMIT_DATA: begin
-					spi_out_reg <= wr_data_reg[byte_offset*8+:8];
+					spi_out_reg <= wr_data[byte_offset*8+:8];
 				end
 				default: begin
 				end
@@ -235,7 +229,7 @@ always @(posedge serial_clk) begin
 	if (bit_cnt == 3'h0) begin
 		case (state)
 			TRANSMIT_COMMAND: begin
-				byte_offset <= address_reg[1:0];
+				byte_offset <= sel_dec_start;
 			end
 			TRANSMIT_DATA: begin
 				byte_offset <= byte_offset + 2'h1;
@@ -269,39 +263,13 @@ always @(posedge clock or posedge reset) begin
     end
 end
 
-
-always @(state) begin
+always @(*) begin
 	case (state)
 		IDLE:
 		begin
         	spi_ss = 1'b1;
         	wb_ack = 1'b0;
 			int_ack = 1'b0;
-		end
-		TRANSMIT_COMMAND:
-		begin
-        	spi_ss = 1'b0;
-        	wb_ack = 1'b0;
-			int_ack = 1'b0;
-		  	wr_data_reg = wr_data;
-//        wr_data_reg[3] = wr_data[31:24];  //TODO: Check and remove this
-//        wr_data_reg[2] = wr_data[23:16];
-//        wr_data_reg[1] = wr_data[15:8];
-//        wr_data_reg[0] = wr_data[7:0];
-        	address_reg    = {address, sel_dec_start};
-			last_byte = sel_dec_last;
-			if (wb_we) begin
-				cmd_reg[0] = 1'b1;
-			end
-			else begin
-				cmd_reg[0] = 1'b0;
-			end
-			if (wb_sel == 4'h0 | (~configed & wb_we)) begin
-				cmd_reg[1] = 1'b1;
-			end
-			else begin
-				cmd_reg[1] = 1'b0;
-			end
 		end
 		FINISH:
 		begin
@@ -312,12 +280,35 @@ always @(state) begin
 		TEMP_STATE:
 		begin
         	spi_ss = 1'b1;
+        	wb_ack = 1'b0;
 			int_ack = 1'b1;
 		end
 		default:
 		begin
+        	spi_ss = 1'b0;
+        	wb_ack = 1'b0;
+			int_ack = 1'b0;
 		end
 	endcase
+end
+
+always @(negedge clock) begin
+	if (serial_clk_negedge && (bit_cnt == 1) && (state == TRANSMIT_COMMAND)) begin
+		if (wb_we) begin
+			cmd_reg[0] <= 1'b1;
+		end
+		else begin
+			cmd_reg[0] <= 1'b0;
+		end
+		if (wb_sel == 4'h0 | (~configed & wb_we)) begin
+			cmd_reg[1] <= 1'b1;
+		end
+		else begin
+			cmd_reg[1] <= 1'b0;
+		end
+	end else begin
+		cmd_reg     <= cmd_reg;
+	end
 end
 
 endmodule

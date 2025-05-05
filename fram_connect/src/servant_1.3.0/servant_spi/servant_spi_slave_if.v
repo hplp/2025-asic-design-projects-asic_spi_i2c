@@ -28,7 +28,7 @@ module servant_spi_slave_if
  
  
     reg [7:0] rCmd;
-    reg [7:0] rState;
+    reg [7:0] rState = 8'h0;
     reg [ADDRESS_WIDTH-1:0] rAddress;
     reg rReadFlag1, rReadFlag2; 
     assign sAddress = rReadFlag1 ? {rAddress[ADDRESS_WIDTH-1:8], rINBUF} : rAddress;
@@ -38,7 +38,7 @@ module servant_spi_slave_if
     
     reg rWriteFlag1;
     wire sRamWR; 
-    assign sRamWR = sCnt8 & spi_sck & rWriteFlag1;
+    assign sRamWR = sCnt8 & spi_sck & rWriteFlag1 & rState[1];
      
   
     //reg [7:0] rRamWrBuf; 
@@ -174,7 +174,7 @@ module servant_spi_slave_if
             end 
         end
         else begin
-            rOUTBUF <= {rOUTBUF[6:0],1'b0}; 
+            rOUTBUF <= {rOUTBUF[6:0],1'b1}; 
         end 
     end
 
