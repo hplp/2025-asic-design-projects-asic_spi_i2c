@@ -106,7 +106,7 @@ SPI
 Original SERV cannot fit into the largest size available in the TinyTapeout for an ASIC design. The following is the result we get when we try to fit it to 8x2 Tiles with a target placement density of 80%.
 
 <p align="left">
-  <img src="images/over_util.png" alt="over_util" width="60%">
+  <img src="images/Big_serv.png" alt="over_util" width="60%">
 </p>
 
 Even for the largest size available, it would need 3594.862% utilization to fit this design into TinyTapeout. This is because the design for original SERV contains the Instruction and Data memories. This memory is very large when compared to the actual SERV processor. Moreover, creating memory from the basic logic elements used in TinyTapeout is not very efficient. **Hence, we are removing the memory from the ASIC design with this project and enhancing the design to use an external memory. Since we are using an SPI interface, the IO pins offered by TinyTapeout is enough to connect the memory externally.**
@@ -121,7 +121,7 @@ Even for the largest size available, it would need 3594.862% utilization to fit 
 We use the GitHub workflows available with TinyTapeout to generate the GDSII for the ASIC design of the SPI-SERV. The following are all the GitHub workflow we run,
 
 <p align="left">
-  <img src="images/workflows.png" alt="workflows" width="60%">
+  <img src="images/workflow.png" alt="workflows" width="60%">
 </p>
 
 The final TT implementation made use of a total of 3X2 tiles with a 80% target placement density. The final utilization was 64.5% with a total wire length of 243537um. The picture illustrats the 3D rendered image of the GDSII of this design. 
