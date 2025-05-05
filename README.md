@@ -1,5 +1,5 @@
 # ASIC Project - Phase III
-
+## 1. Project Outline
 ## Team Name: 
 ASIC_SPI_SERV
 
@@ -43,7 +43,7 @@ Languages: Verilog, TCL
 - tt10-spi_serv: TinyTapeout GitHub repository added as a submodule.
 
 
-
+## 2. Project Overview
 
 ### What is SERV?
 
@@ -91,7 +91,7 @@ For this project, we use **Servant** which is a reference platform which package
 
 
 
-## Results
+## 3. Results
 #### TinyTapeout Implementation
 
 <p align="center">
