@@ -78,14 +78,14 @@ For this project, we use **Servant** which is a reference platform which package
 - Relatively slow - **require 64 clock cycles to access 1 word** 
 
 <figure style="margin: 0 auto; text-align: center; width: 40%;">
-  <img src="images/spi_con.png" alt="spi_read" style="width: 35%;">
+  <img src="images/spi_con.png" alt="spi_read" style="width: 40%;">
   <figcaption>Figure: SPI Connection</figcaption>
 </figure>
 
 
 
 <figure style="margin: 0 auto; text-align: center; width: 35%;">
-  <img src="images/spi_read_2.png" alt="spi_read" style="width: 40%;">
+  <img src="images/spi_read_2.png" alt="spi_read" style="width: 50%;">
   <figcaption>Figure: SPI Read Operation</figcaption>
 </figure>
 
