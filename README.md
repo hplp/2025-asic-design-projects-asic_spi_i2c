@@ -74,7 +74,7 @@ Wishbone:
 
 > *Figure: Wishbone connection*
 
-SPI
+SPI:
 - A synchronized serial communication protocol
 - Can integrate with **4 wires total**
 - A Master-Slave Architecture
@@ -95,11 +95,8 @@ SPI
 ### Why integrate SPI with SERV?
 
 - **Decouples memory from CPU core**: Enables flexible memory placement and simplifies physical design for fabrication
-
 - **Minimal pin count**: Communicates with external RAM using only 4 wires (MISO, MOSI, SCK, CS), reducing I/O complexity
-
 - **Aligns with SERV’s bit-serial philosophy**: Maintains SERV’s ultra-minimal, bit-serial architecture by extending serial design principles to memory access
-
 - **Shrinks logic footprint**: Removes internal RAM, reducing FPGA resource usage and improving area efficiency for ASIC targets
 
 ### Original SERV in TinyTapeout
@@ -135,7 +132,6 @@ TT uses cocotb for testing in its GitHub workflows. The cocotb testing scripts w
 
 <p align="left">
   <img src="images/cocotb_tests.png" alt="utilization_error" width="80%">
-  <figcaption style="text-align: center;">Figure: cocotb tests</figcaption>
 </p>
 
 > Please note that if 'No' was printed instead of 'Yes', it means that stores are not working.
@@ -162,7 +158,9 @@ The Dining Philosophers Problem is a classic example in computer science that il
 * To eat, a philosopher needs both the left and right forks.
 * A philosopher must pick up the left fork and the right fork, eat, and then put them down.
 
-The ASIC design was fully verified using the open-soure verification tool, Verilator. We cannot use any detailed simulators like ModelSim or Synopsys DVE since it would take couple of minutes just to print one word using SERV. Hence, we are doing this with Verilator, since it is light-weight and fast-enough to show the real-time execution of programs on SERV. In this video, we are demonstrating a program tackling this Dining Philosophers Problem running on Zephyr OS booted onto SERV. In the command that starts this simulation we need to give the baud-rate, program to execute and memory size. At the start, it prints that the Zephyr OS is successfully booted and then gives a description of the program it is going to run for the Dining Philosophers Problem. Once the program starts, it prints the status of each Philosopher one-by-one. The statuses include **Eating**, **Thinking**, **Starving**, **Holding one fork** and **Dropped one fork**. When the status of each philosopher change, it is updated on the terminal. Since this is a simulations, we could get very clean prints on the terminal.
+The ASIC design was fully verified using the open-soure verification tool, Verilator. We cannot use any detailed simulators like ModelSim or Synopsys DVE since it would take couple of minutes just to print one word using SERV. Hence, we are doing this with Verilator, since it is light-weight and fast-enough to show the real-time execution of programs on SERV. 
+
+In this video, we are demonstrating a program tackling this Dining Philosophers Problem running on Zephyr OS booted onto SERV. In the command that starts this simulation we need to give the baud-rate, program to execute and memory size. At the start, it prints that the Zephyr OS is successfully booted and then gives a description of the program it is going to run for the Dining Philosophers Problem. Once the program starts, it prints the status of each Philosopher one-by-one. The statuses include **Eating**, **Thinking**, **Starving**, **Holding one fork** and **Dropped one fork**. When the status of each philosopher change, it is updated on the terminal. Since this is a simulations, we could get very clean prints on the terminal.
 
 <p align="left">
   <a href="https://drive.google.com/file/d/1RlvJeYeywYfrMxeHt2FA7NISYa-Ry-am/view?usp=share_link">
@@ -175,11 +173,8 @@ The ASIC design was fully verified using the open-soure verification tool, Veril
 In the Project Overview, we have discussed why we need to integrate SPI into SERV. This project has achieved them as follows,
 
 - **Decouples memory from CPU core**: Enables flexible memory placement and simplifies physical design for fabrication- <span style="color:dark green"> ***FULLY ACHIEVED***</span>
-
 - **Minimal pin count**: Communicates with external RAM using only 4 wires (MISO, MOSI, SCK, CS), reducing I/O complexity - <span style="color:dark green"> ***FULLY ACHIEVED***</span>
-
 - **Aligns with SERV’s bit-serial philosophy**: Maintains SERV’s ultra-minimal, bit-serial architecture by extending serial design principles to memory access - <span style="color:dark yellow"> ***PARTIALLY ACHIEVED***</span>
-
 - **Shrinks logic footprint**: Removes internal RAM, reducing FPGA resource usage and improving area efficiency for ASIC targets - <span style="color:dark yellow"> ***PARTIALLY ACHIEVED***</span>
 
 The first two were fully achieved, since now the memory is placed externally in an FRAM and accessed through SPI which only uses 4 wires. However, the last two were only partially achieved since for this project we are using a Wishbone-to-SPI convertor. The memory accessing is done serially but the Wishbone part still exists in the middle. We have reduced the footprint by moving the memory to an external device, but still we have added logic relevant to the convertor. By replacing Wishbone with SPI in future work, we can fully achieve these two as well. With this project, we have proved the feasibility of doing so.
@@ -187,13 +182,10 @@ The first two were fully achieved, since now the memory is placed externally in 
 ## 5. Future Work
 
 - **Eliminate Wishbone**: Replace the Wishbone bus with a fully bit-serial interconnect to further reduce logic complexity and align with SERV’s serial architecture.
-
 - **Add bootloader support**: Enable loading programs such as Zephyr RTOS from SPI RAM or other sources at startup.
-
 - **Integrate basic peripherals**:
   * **GPIO**: Provide general-purpose I/O for basic hardware interfacing.
   * **UART (RX)**: Allow serial communication for debugging or basic shell interaction.
-
 - **Implement I2C-based memory access**: Use I2C as an alternative to SPI for connecting external RAM — reducing wire count even further in ultra-minimal systems.
 
 ## 6. References
