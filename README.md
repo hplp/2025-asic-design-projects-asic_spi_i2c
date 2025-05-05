@@ -85,7 +85,7 @@ For this project, we use **Servant** which is a reference platform which package
 
 
 <figure style="margin: 0 auto; text-align: center; width: 35%;">
-  <img src="images/spi_read_2.png" alt="spi_read" style="width: 50%;">
+  <img src="images/spi_read_2.png" alt="spi_read" style="width: 80%;">
   <figcaption>Figure: SPI Read Operation</figcaption>
 </figure>
 
