@@ -141,7 +141,6 @@ The image below shows the overview resource utilization of our ASIC design for t
 
 <p align="left">
   <img src="images/TT_resource_utilization.png" alt="utilization_error" width="80%">
-  <figcaption>Figure: TinyTapeout Resource Utilization</figcaption>
 </p>
 
 ### Verification 
