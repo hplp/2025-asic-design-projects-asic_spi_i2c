@@ -142,5 +142,25 @@ The Verilog design was also verified using the open soure verification tool, Ver
   </a>
 </p>
 
+
+
 #### Final Overview and Outlook
 The project successfully decoupls the in-built memory in SERV and successfully replaces that with an expternal SPI-FRAM. With SPI interface, the external memory can be accessed using a total of 4 wires. This also reduces the total logic footprint requirement in the SERV. This proves that it is possible to implement a external memory accessing using serial SPI protocol for SERV. Therefore with further work, it is possible to achieve a fully bit-serial architecture for SERV with SPI memory accessing. 
+
+
+## 5. Future Work
+
+- **Eliminate Wishbone**: Replace the Wishbone bus with a fully bit-serial interconnect to further reduce logic complexity and align with SERV’s serial architecture.
+
+- **Add bootloader support**: Enable loading programs such as Zephyr RTOS from SPI RAM or other sources at startup.
+
+- **Integrate basic peripherals**:
+  * **GPIO**: Provide general-purpose I/O for basic hardware interfacing.
+  * **UART (RX)**: Allow serial communication for debugging or basic shell interaction.
+
+- **Implement I2C-based memory access**: Use I2C as an alternative to SPI for connecting external RAM — reducing wire count even further in ultra-minimal systems.
+
+## 6. References
+
+- [Original SERV Github](https://github.com/olofk/serv)
+- [Original SERV Documentation](https://serv.readthedocs.io/en/latest/reservoir.html)
