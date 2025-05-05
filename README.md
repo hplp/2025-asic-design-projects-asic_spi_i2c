@@ -66,7 +66,7 @@ For this project, we use **Servant** which is a reference platform which package
 - Requires high wire count **(100+ in total)**
 
 <figure style="text-align: center;">
-  <img src="images/wb_con_2.png" alt="wb_con" width="50%">
+  <img src="images/wb_con_2.png" alt="wb_con" width=35%">
   <figcaption>Figure:Wishbone Connection</figcaption>
 </figure>
 
@@ -77,14 +77,14 @@ For this project, we use **Servant** which is a reference platform which package
 - A Master-Slave Architecture
 - Relatively slow - **require 64 clock cycles to access 1 word** 
 
-<figure style="margin: 0 auto; text-align: center; width: 50%;">
-  <img src="images/spi_read_2.png" alt="spi_read" style="width: 100%;">
+<figure style="margin: 0 auto; text-align: center; width: 35%;">
+  <img src="images/spi_con.png" alt="spi_read" style="width: 100%;">
   <figcaption>Figure: SPI Connection</figcaption>
 </figure>
 
 
 
-<figure style="margin: 0 auto; text-align: center; width: 50%;">
+<figure style="margin: 0 auto; text-align: center; width: 35%;">
   <img src="images/spi_read_2.png" alt="spi_read" style="width: 100%;">
   <figcaption>Figure: SPI Read Operation</figcaption>
 </figure>
