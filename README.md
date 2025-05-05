@@ -1,6 +1,6 @@
 # ASIC Project - Phase III
 ## 1. Project Outline
-## Team Name: 
+### Team Name: 
 ASIC_SPI_SERV
 
 ### Team Members:
