@@ -48,7 +48,7 @@ Languages: Verilog, TCL
 ### What is SERV?
 
 <figure style="text-align: center;">
-  <img src="images/serv.png" alt="serv" width="80%">
+  <img src="images/serv.png" alt="serv" width="35%">
 </figure>
 
 Serial RISC-V (SERV) is bit-serial CPU that claims to be the world's smallest RISC-V CPU. It is,
